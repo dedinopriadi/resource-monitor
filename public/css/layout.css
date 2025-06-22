@@ -1,0 +1,139 @@
+body {
+    background: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    background: var(--card-bg);
+    border-radius: 14px;
+    box-shadow: 2px 2px 8px #b8bac0, -2px -2px 8px #ffffff;
+    border: none;
+    padding: 1.5rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 1.5rem;
+    background: var(--bg-color);
+    border-radius: 14px;
+    box-shadow: none;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Consistent gap */
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
+    flex-shrink: 0;
+    min-height: unset;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.summary-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 0;
+}
+
+.main-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.resource-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: min-content;
+    gap: 1.5rem;
+}
+
+.system-info-card {
+    grid-column: 1 / -1; /* Make this card span the full width */
+}
+
+/* Two-column details for system info on large screens */
+.system-info-card .card-header {
+    border-bottom: none; /* Remove horizontal line */
+}
+
+.system-info-card .card-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 2rem; /* row-gap and column-gap */
+    padding-top: 0; /* Remove extra padding */
+    border-top: none; /* Remove horizontal line */
+    position: relative; /* Needed for pseudo-element positioning */
+}
+
+.system-info-card .card-details::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 2px; /* Thicker, stronger divider */
+    background-color: var(--text-secondary);
+    transform: translateX(-1px); /* Center the line */
+}
+
+.dashboard-summary-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 1rem 0;
+    color: #888;
+    font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .resource-details-grid {
+        grid-template-columns: 1fr; /* Stack to a single column on smaller screens */
+    }
+
+    .system-info-card .card-details {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    .system-info-card .card-details::after {
+        display: none; /* Hide divider on smaller screens */
+    }
+}
+
+.about-page-section {
+    flex: 1;
+}

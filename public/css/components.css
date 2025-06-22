@@ -1,0 +1,791 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.logo i {
+    font-size: 2rem;
+}
+
+.logo h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.main-nav {
+    width: 100%;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav li {
+    margin-bottom: 0.75rem;
+}
+
+.main-nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav li.active a {
+    background: #e3e8f7;
+    color: var(--primary-color);
+    box-shadow: 2px 2px 8px #b8bac0, -2px -2px 8px #ffffff;
+}
+
+.main-nav a i {
+    font-size: 1.125rem;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.status-indicator.online i {
+    color: var(--success-color);
+}
+
+.status-indicator.offline i {
+    color: var(--danger-color);
+}
+
+.settings-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#settingsToggle {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: none;
+    background: var(--button-bg);
+    color: var(--button-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+
+#settingsToggle:hover {
+    box-shadow: 4px 4px 12px #b8bac0, -4px -4px 12px #ffffff;
+    background: var(--button-hover-bg);
+}
+
+.card, .summary-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 4px 4px 12px #b8bac0, -4px -4px 12px #ffffff;
+    border: none;
+    padding: 1.25rem; /* Consistent padding */
+    margin: 0;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex; /* Make card a flex container */
+    flex-direction: column; /* Stack children vertically */
+}
+
+.card:hover, .summary-card:hover {
+    box-shadow: 2px 2px 6px #b8bac0, -2px -2px 6px #ffffff;
+    transform: translateY(-2px) scale(1.01);
+}
+
+.main-header, .sidebar {
+    border-radius: 14px;
+    box-shadow: 2px 2px 8px #b8bac0, -2px -2px 8px #ffffff;
+}
+
+.summary-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 0;
+}
+
+.summary-card {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: var(--transition);
+    min-height: 110px;
+    cursor: pointer;
+}
+
+.summary-card .card-icon {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+}
+
+.summary-card .card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.summary-card .card-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.summary-card .summary-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-primary);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--text-secondary); /* Use theme color */
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card-header i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.card-header h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.card-content canvas,
+#cpuChart {
+    width: 100% !important;
+    min-height: 200px !important;
+    height: 200px !important;
+    display: block;
+    background: #f3f6fa;
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 4px #b8bac0, inset -1px -1px 4px #ffffff;
+}
+
+.card-content.with-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Space between progress bar and details */
+}
+
+.card-data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.data-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.data-value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.progress-container {
+    background: var(--progress-bar-bg);
+    border-radius: 8px;
+    height: 22px; /* Increased height for more padding */
+    overflow: hidden;
+    position: relative;
+    box-shadow: none; /* Cleaner look */
+    border: 1px solid var(--border-color);
+}
+
+.progress-bar {
+    background: var(--primary-color); /* Simpler background */
+    border-radius: 7px; /* Match container */
+    height: 100%;
+    transition: width 0.4s ease-in-out;
+}
+
+.progress-text {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Consistent gap */
+    margin-top: 0.5rem; /* Space from progress bar */
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--border-color);
+    margin-top: 0.5rem;
+}
+
+.details-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    border-bottom: none;
+    font-size: 0.95rem; /* Slightly larger */
+}
+
+.details-item:last-child {
+    border-bottom: none;
+}
+
+.details-item span:first-child {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.details-item span:last-child {
+    color: var(--text-primary);
+    font-weight: 600; /* Bolder value */
+    text-align: right;
+}
+
+/* Two-column details for system info on large screens */
+@media (min-width: 900px) {
+    .system-info-card .details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem 1.5rem;
+    }
+}
+
+/* Temperature Card Redesign */
+.temperature-main {
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+#temperatureValue {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.temperature-unit-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* Modern Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;  /* Adjusted size */
+    height: 26px;  /* Adjusted size */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--switch-bg, #ccc);
+    transition: .4s;
+    border-radius: 26px; /* match height */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px; /* Adjusted size */
+    width: 20px;  /* Adjusted size */
+    left: 3px;    /* Adjusted for padding */
+    bottom: 3px;  /* Adjusted for padding */
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Add depth */
+}
+
+input:checked + .slider {
+    background-color: var(--switch-active, var(--primary-color));
+    border-color: var(--switch-active, var(--primary-color));
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+/* Settings Page Styles */
+.settings-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-label h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+}
+
+.setting-label p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.button-group {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--text-secondary);
+}
+
+.btn-group-item {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    border-left: 1px solid var(--text-secondary);
+}
+
+.btn-group-item:first-child {
+    border-left: none;
+}
+
+.btn-group-item.active,
+.btn-group-item:hover {
+    background-color: var(--primary-color);
+    color: var(--text-on-primary);
+}
+
+/* Add more component styles as needed (cards, widgets, tables, etc.) */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+    box-sizing: border-box;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.header-uptime {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dashboard-summary-section {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.dashboard-summary-grid {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2.5rem;
+    align-items: stretch; /* Make columns equal height */
+}
+
+.dashboard-summary-cards {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Allow container to fill the height */
+    gap: 2rem;
+}
+
+.dashboard-summary-cards .card {
+    flex: 1; /* Allow cards to grow and fill space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: stretch;
+    min-height: 0;
+    padding: 1rem 0.75rem;
+}
+
+.summary-value {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 800;
+    margin-top: 0.5rem;
+}
+
+.network-usage-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 0;
+}
+
+.network-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.network-content canvas {
+    flex: 1;
+    min-height: 300px !important;
+    max-height: 400px !important;
+    margin-bottom: 2rem;
+}
+
+.dashboard-footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 1rem 0;
+    color: #888;
+    font-size: 0.95rem;
+}
+
+.dashboard-footer a {
+    color: var(--switchActive); /* Use a contrasting color to make it stand out */
+    font-weight: 500; /* Make the text slightly bolder */
+    text-decoration: none; /* Remove default underline to use a custom border */
+    border-bottom: 1px dotted; /* Add a subtle dotted underline for clickability */
+    transition: all 0.2s ease-in-out;
+}
+
+.dashboard-footer a:hover {
+    color: var(--text); /* Use the main text color on hover */
+    border-bottom-style: solid; /* Make the underline solid on hover */
+}
+
+@media (max-width: 900px) {
+    .dashboard-summary-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .dashboard-summary-cards {
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: space-between;
+    }
+    .dashboard-summary-cards .card {
+        min-width: 120px;
+        max-width: 100%;
+        min-height: 80px;
+    }
+    .network-usage-card {
+        min-height: 220px;
+    }
+    .network-content canvas {
+        min-height: 120px !important;
+        max-height: 180px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .dashboard-summary-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: unset;
+    }
+}
+
+.network-stats {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    gap: 2rem;
+    row-gap: 1.2rem;
+}
+
+.network-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    gap: 1.2rem;
+}
+
+.network-col-left {
+    align-items: flex-start;
+    padding-left: 2rem;
+}
+
+.network-col-right {
+    align-items: flex-end;
+    padding-right: 2rem;
+}
+
+.network-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.network-row span:first-child {
+    min-width: 100px;
+    text-align: right;
+    color: #1e293b;
+}
+
+.network-value {
+    font-weight: 700;
+    min-width: 7rem;
+    text-align: left;
+    margin-left: 0;
+}
+
+.network-row span:not([id]) {
+    color: var(--text-secondary);
+    font-weight: 500;
+    flex-basis: 80px;
+    flex-shrink: 0;
+    text-align: left;
+}
+
+.network-row span[id] {
+    color: var(--text-primary);
+    font-weight: 700;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.network-divider {
+    width: 3px;
+    min-width: 3px;
+    background: #94a3b8;
+    min-height: 3.5rem;
+    align-self: center;
+    border-radius: 2px;
+}
+
+.card-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 0.3rem;
+    padding-left: 0;
+    width: 100%;
+}
+
+.card-icon,
+.card-icon i,
+.card-icon svg {
+    font-size: 1rem !important;
+    color: #2563eb !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    width: 1.2em !important;
+    height: 1.2em !important;
+    border-radius: 0 !important;
+    display: inline-block !important;
+}
+
+.card-label {
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-align: left;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+
+.card-data-center {
+    flex: 1; /* Allow this to grow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summary-value {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 800;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.card.summary-card {
+    padding: 1.2rem; /* Reduced padding */
+}
+
+.dark-mode .card-label {
+    color: var(--text-primary);
+}
+
+/* About Page Styles */
+.about-card {
+    display: block; /* Override .card's flex display */
+    flex: 1; /* Allow card to grow and fill space */
+}
+
+.about-section {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.about-section:first-child {
+    padding-top: 0;
+}
+
+.about-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.about-section h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.about-section p {
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.tech-item {
+    background-color: var(--button-bg);
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.developer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.developer-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.developer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+.developer-links a:hover {
+    color: var(--primary-color);
+}
+
+.kofi-widget {
+    margin-top: 1rem;
+}
+
+.about-card .card-content {
+    display: block;
+    height: auto;
+    overflow: visible;
+} 

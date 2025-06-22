@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head', { pageTitle: 'About' }) %>
+</head>
+<body>
+    <%- include('../partials/sidebar', { activePage: 'about' }) %>
+    <main class="main-content">
+        <%- include('../partials/header') %>
+
+        <section class="about-page-section">
+            <div class="card about-card">
+                <div class="card-header">
+                    <i class="fas fa-info-circle"></i>
+                    <h2>About This Project</h2>
+                </div>
+
+                <div class="about-section">
+                    <h3>The Project</h3>
+                    <p>
+                        I built this dashboard to provide a real-time view of system's vital statistics. My goal was to create a clean, modern, and accessible monitoring tool using Node.js to gather system data and WebSockets to push that information instantly to the UI. I developed the application iteratively, focusing on creating a robust architecture and a great user experience.
+                    </p>
+                </div>
+                
+                <div class="about-section">
+                    <h3>Key Features</h3>
+                    <ul class="tech-list">
+                        <li class="tech-item">Real-time CPU, Memory, Swap, and Disk monitoring</li>
+                        <li class="tech-item">Live network usage chart (Upload/Download)</li>
+                        <li class="tech-item">Light & Dark theme support</li>
+                        <li class="tech-item">Selectable data refresh interval (1s, 2s, 5s)</li>
+                        <li class="tech-item">Detailed system and hardware information</li>
+                        <li class="tech-item">Cross-platform compatibility (macOS, Windows, Linux)</li>
+                    </ul>
+                </div>
+
+                <div class="about-section">
+                    <h3>Technologies Used</h3>
+                    <ul class="tech-list">
+                        <li class="tech-item"><i class="devicon-nodejs-plain"></i> Node.js</li>
+                        <li class="tech-item"><i class="devicon-express-original"></i> Express</li>
+                        <li class="tech-item"><i class="fas fa-file-code"></i> EJS</li>
+                        <li class="tech-item"><i class="devicon-socketio-original"></i> Socket.IO</li>
+                        <li class="tech-item"><i class="devicon-chartjs-plain"></i> Chart.js</li>
+                        <li class="tech-item"><i class="fas fa-server"></i> systeminformation</li>
+                    </ul>
+                </div>
+
+                <div class="about-section">
+                    <h3>About the Developer</h3>
+                    <div class="developer-info">
+                        <p>
+                            This application was designed and developed by Dedi Nopriadi, a software developer with a passion for creating clean, efficient, and user-friendly solutions.
+                        </p>
+                        <div class="developer-links">
+                            <a href="https://github.com/dedinopriadi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/dedi-nopriadi/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/nopriadin" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-section">
+                    <h3>Support & Collaboration</h3>
+                    <div class="developer-info">
+                        <p>
+                            If you find this project useful, please consider showing your support. I am always open to freelance opportunities and collaboration on interesting projects. Let's build something great together!
+                        </p>
+                        <div class="kofi-widget">
+                            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+                            <script type='text/javascript'>
+                                kofiwidget2.init('Support me on Ko-fi', '#72a4f2', 'J3J61GEUBX');
+                                kofiwidget2.draw();
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <%- include('../partials/footer') %>
+    </main>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/socket.js"></script>
+    <script src="/js/charts.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/settings.js"></script>
+</body>
+</html> 

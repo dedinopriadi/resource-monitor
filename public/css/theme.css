@@ -1,0 +1,66 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #2563eb;
+    --success-color: #22c55e;
+    --warning-color: #eab308;
+    --danger-color: #ef4444;
+    --text-on-primary: #ffffff;
+
+    /* Light Theme */
+    --bg-color: #f8fafc; /* slate-50 */
+    --card-bg: #ffffff;
+    --text-primary: #1e293b; /* slate-800 */
+    --text-secondary: #64748b; /* slate-500 */
+    --border-color: #e2e8f0; /* slate-200 */
+    --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --button-bg: #f1f5f9; /* slate-100 */
+    --button-text: #1e293b; /* slate-800 */
+    --button-hover-bg: #e2e8f0; /* slate-200 */
+    --dropdown-bg: #ffffff;
+    --dropdown-border: #e2e8f0; /* slate-200 */
+    --dropdown-header: #64748b; /* slate-500 */
+    --progress-bar-bg: #e2e8f0; /* slate-200 */
+    --transition: all 0.2s ease;
+    --switch-bg: #cbd5e1; /* slate-300 */
+    --switch-active: var(--primary-color);
+
+    /* Dark Theme */
+    --dark-bg-color: #0f172a; /* slate-900 */
+    --dark-card-bg: #1e293b; /* slate-800 */
+    --dark-text-primary: #e2e8f0; /* slate-200 */
+    --dark-text-secondary: #cbd5e1; /* slate-300 */
+    --dark-border-color: #334155; /* slate-700 */
+    --dark-card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --dark-button-bg: #334155; /* slate-700 */
+    --dark-button-text: #f8fafc; /* slate-50 */
+    --dark-button-hover-bg: #475569; /* slate-600 */
+    --dark-dropdown-bg: #1e293b; /* slate-800 */
+    --dark-dropdown-border: #334155; /* slate-700 */
+    --dark-dropdown-header: #94a3b8; /* slate-400 */
+    --dark-progress-bar-bg: #475569; /* slate-600 */
+    --dark-switch-bg: #475569; /* slate-600 */
+    --dark-switch-active: #60a5fa; /* blue-400 */
+    --dark-chart-grid: rgba(248, 250, 252, 0.1);
+    --dark-chart-text: #94a3b8; /* slate-400 */
+}
+
+.dark-mode {
+    --bg-color: var(--dark-bg-color);
+    --card-bg: var(--dark-card-bg);
+    --text-primary: var(--dark-text-primary);
+    --text-secondary: var(--dark-text-secondary);
+    --border-color: var(--dark-border-color);
+    --card-shadow: var(--dark-card-shadow);
+    --button-bg: var(--dark-button-bg);
+    --button-text: var(--dark-button-text);
+    --button-hover-bg: var(--dark-button-hover-bg);
+    --dropdown-bg: var(--dark-dropdown-bg);
+    --dropdown-border: var(--dark-dropdown-border);
+    --dropdown-header: var(--dark-dropdown-header);
+    --progress-bar-bg: var(--dark-progress-bar-bg);
+    --switch-bg: var(--dark-switch-bg);
+    --switch-active: var(--dark-switch-active);
+    --chart-grid: var(--dark-chart-grid);
+    --chart-text: var(--dark-chart-text);
+    color: var(--text-primary);
+} 
